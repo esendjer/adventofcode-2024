@@ -79,7 +79,6 @@ lines = in_date.strip().split("\n")
 matrix = [list(line.strip()) for line in lines]
 
 search_stack = []
-current_stack = []
 
 hw_len = (len(matrix), len(matrix[-1]))
 
