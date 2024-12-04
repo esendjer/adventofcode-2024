@@ -1,5 +1,4 @@
 from dataclasses import dataclass, replace, field
-from enum import IntEnum, auto
 
 in_date = ""
 
@@ -59,9 +58,7 @@ M.M
 
 
 def validate_x(hw_len, search: XShape) -> bool:
-    global VALID_SHAPES
     points = get_points_to_check(hw_len, search)
-    l = []
     if points:
         d = f"""
 {matrix[points[0][0]][points[0][1]]}.{matrix[points[1][0]][points[1][1]]}
@@ -71,7 +68,6 @@ def validate_x(hw_len, search: XShape) -> bool:
         if d in VALID_SHAPES:
             return True
     return False
-
 
 lines = in_date.strip().split("\n")
 matrix = [list(line.strip()) for line in lines]
@@ -90,8 +86,6 @@ for h_idx, _ in enumerate(matrix):
 
 count = 0
 for s in passed_searches:
-    s: XShape = s
-    current = False
     if s.Success:
         count += 1
 

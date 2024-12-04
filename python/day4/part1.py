@@ -116,7 +116,6 @@ for h_idx, _ in enumerate(matrix):
 
 count = 0
 for s in passed_searches:
-    s: Search = s
     if s.Success:
         count += 1
 
